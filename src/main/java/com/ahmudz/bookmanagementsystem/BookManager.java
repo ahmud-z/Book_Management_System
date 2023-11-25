@@ -39,11 +39,11 @@ public class BookManager {
 
             while (readerScanner.hasNextLine()) {
                 String book = readerScanner.nextLine();
-                
-                if(book.isBlank() || book.isEmpty()) {
+
+                if (book.isBlank() || book.isEmpty()) {
                     continue;
                 }
-                
+
                 String[] bookDataArr = book.split("_");
 
                 books[i][0] = bookDataArr[0];
@@ -64,7 +64,7 @@ public class BookManager {
         try {
             FileWriter writer = new FileWriter("books.db", true);
 
-            writer.write("\n" + name + "_" + stock + "_" + author);
+            writer.write("\n" + name + "_" + author + "_" + stock);
 
             writer.close();
 
@@ -75,33 +75,75 @@ public class BookManager {
     static void updateBook(String name, String author, String stock) {
         try {
             String contents = "";
-            
+
             String[][] books = getBooks();
             System.out.println("Total Books: " + books.length);
-            
+
             for (int i = 0; i < books.length; i++) {
-                if(books[i][0] == null) {
+                if (books[i][0] == null) {
                     break;
                 }
-                
+
                 if (books[i][0].equals(name)) { // Throws exception/error
                     books[i][0] = name;
                     books[i][1] = author;
                     books[i][2] = stock;
                 }
-                
+
                 contents += books[i][0] + "_" + books[i][1] + "_" + books[i][2] + "\n";
-                
+
                 System.out.println(contents);
             }
-            
+
             FileWriter writer = new FileWriter("books.db");
             writer.write(contents);
             writer.close();
-            
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
+    static void reduceStock(String name, int amount) {
+        try {
+            String[][] books = getBooks();
+
+            for (int i = 0; i < books.length; i++) {
+                if (books[i][0] == null) {
+                    break;
+                }
+
+                if (books[i][0].equals(name)) { // Throws exception/error
+                    System.out.println(books[i][0]);
+
+                    books[i][2] = Integer.toString(Integer.parseInt(books[i][2]) - amount);
+                }
+            }
+
+            updateDb(books);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    static void updateDb(String[][] books) {
+        try {
+            String contents = "";
+
+            for (int i = 0; i < books.length; i++) {
+                if (books[i][0] == null) {
+                    break;
+                }
+
+                contents += books[i][0] + "_" + books[i][1] + "_" + books[i][2] + "\n";
+            }
+
+            FileWriter writer = new FileWriter("books.db");
+            writer.write(contents);
+            writer.close();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

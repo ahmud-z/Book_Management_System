@@ -139,6 +139,7 @@ public class UpdateBookWindow extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void selectBooksPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_selectBooksPropertyChange

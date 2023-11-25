@@ -28,7 +28,7 @@ public class LoginWindow extends javax.swing.JFrame {
         jRadioButton1.setSelected(true);
         messageLabel.setForeground(Color.white);
         try {
-            togglePasswordVisibility.setIcon(new ImageIcon(ImageIO.read(new File("res/show_password.png"))));
+            togglePasswordVisibility.setIcon(new ImageIcon(ImageIO.read(new File("res/hide_password.png"))));
         } catch (Exception e) {
             System.out.println("Failed to load icon.");
         }
@@ -44,30 +44,28 @@ public class LoginWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        loginButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        inputId = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        messageLabel = new javax.swing.JLabel();
+        inputId = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
         togglePasswordVisibility = new javax.swing.JToggleButton();
         inputPassword = new javax.swing.JPasswordField();
-        jLabel4 = new javax.swing.JLabel();
+        loginButton = new javax.swing.JButton();
+        messageLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
+        setBackground(new java.awt.Color(51, 153, 255));
 
-        jLabel1.setText("Password");
-
-        loginButton.setText("Login");
-        loginButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginButtonActionPerformed(evt);
-            }
-        });
-
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setText("ID");
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jRadioButton2.setText("Student");
+        jRadioButton2.setActionCommand("student");
 
         inputId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,13 +73,15 @@ public class LoginWindow extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setText("Password");
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Mahmud\\Documents\\NetBeansProjects\\BookManagementSystem\\res\\login_bg.png")); // NOI18N
+
         buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jRadioButton1.setText("Admin");
         jRadioButton1.setActionCommand("admin");
-
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Student");
-        jRadioButton2.setActionCommand("student");
 
         togglePasswordVisibility.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +89,16 @@ public class LoginWindow extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Mahmud\\Documents\\NetBeansProjects\\BookManagementSystem\\res\\login_bg.png")); // NOI18N
+        loginButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        loginButton.setText("Login");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginButtonActionPerformed(evt);
+            }
+        });
+
+        messageLabel.setBackground(new java.awt.Color(51, 51, 0));
+        messageLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,14 +115,14 @@ public class LoginWindow extends javax.swing.JFrame {
                         .addComponent(jRadioButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jRadioButton2))
-                    .addComponent(messageLabel)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(inputPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(togglePasswordVisibility, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                        .addComponent(togglePasswordVisibility))
+                    .addComponent(messageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addGap(55, 55, 55))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,21 +138,42 @@ public class LoginWindow extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(togglePasswordVisibility, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(inputPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
+                            .addComponent(inputPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jRadioButton1)
                             .addComponent(jRadioButton2))
-                        .addGap(18, 18, 18)
-                        .addComponent(messageLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(messageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addComponent(loginButton)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void togglePasswordVisibilityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_togglePasswordVisibilityActionPerformed
+
+        try {
+            if (togglePasswordVisibility.isSelected()) {
+                togglePasswordVisibility.setIcon(new ImageIcon(ImageIO.read(new File("res/show_password.png"))));
+                inputPassword.setEchoChar((char) 0);
+
+            } else {
+                togglePasswordVisibility.setIcon(new ImageIcon(ImageIO.read(new File("res/hide_password.png"))));
+                inputPassword.setEchoChar('*');
+            }
+        } catch (Exception e) {
+            System.out.println("Failed to load icon.");
+        }
+    }//GEN-LAST:event_togglePasswordVisibilityActionPerformed
+
+    private void inputIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIdActionPerformed
+
+    }//GEN-LAST:event_inputIdActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         String id = inputId.getText();
@@ -174,28 +204,10 @@ public class LoginWindow extends javax.swing.JFrame {
 
         } else {
             messageLabel.setText("Invalid input.");
+            messageLabel.setForeground(Color.red);
+
         }
     }//GEN-LAST:event_loginButtonActionPerformed
-
-    private void togglePasswordVisibilityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_togglePasswordVisibilityActionPerformed
-
-        try {
-            if (togglePasswordVisibility.isSelected()) {
-                togglePasswordVisibility.setIcon(new ImageIcon(ImageIO.read(new File("res/hide_password.png"))));
-                inputPassword.setEchoChar((char) 0);
-
-            } else {
-                togglePasswordVisibility.setIcon(new ImageIcon(ImageIO.read(new File("res/show_password.png"))));
-                inputPassword.setEchoChar('*');
-            }
-        } catch (Exception e) {
-            System.out.println("Failed to load icon.");
-        }
-    }//GEN-LAST:event_togglePasswordVisibilityActionPerformed
-
-    private void inputIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputIdActionPerformed
-
-    }//GEN-LAST:event_inputIdActionPerformed
 
     /**
      * @param args the command line arguments

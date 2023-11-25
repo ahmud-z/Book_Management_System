@@ -4,6 +4,7 @@
  */
 package com.ahmudz.bookmanagementsystem;
 
+import java.awt.Color;
 import javax.swing.DefaultComboBoxModel;
 
 /**
@@ -27,7 +28,7 @@ public class IssueBook extends javax.swing.JFrame {
             model.addElement(books[i][0]);
         }
 
-        issueBookComboBox.setModel(model);
+        selectBook.setModel(model);
 
     }
 
@@ -35,44 +36,41 @@ public class IssueBook extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnBack = new javax.swing.JButton();
-        exit = new javax.swing.JButton();
-        issueBookComboBox = new javax.swing.JComboBox<>();
+        isuueStatus = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        inputId = new javax.swing.JTextField();
+        selectBook = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         btnEnter = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        amountTextField = new javax.swing.JTextField();
+        inputAmount = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        nameTextField = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        idTextField = new javax.swing.JTextField();
+        inputStudentName = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        semesterTextField = new javax.swing.JTextField();
+        exit = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
+        issueStatusLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnBack.setText("Back");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
+        isuueStatus.setBackground(new java.awt.Color(3, 87, 98));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Student ID");
+
+        selectBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
+                selectBookActionPerformed(evt);
             }
         });
 
-        exit.setText("Exit");
-        exit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitActionPerformed(evt);
-            }
-        });
-
-        issueBookComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                issueBookComboBoxActionPerformed(evt);
-            }
-        });
-
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Select Book");
 
+        btnEnter.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnEnter.setText("Enter");
         btnEnter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,107 +78,174 @@ public class IssueBook extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Amount");
 
+        inputAmount.setText("0");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Student name");
 
-        jLabel4.setText("Student ID");
+        inputStudentName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputStudentNameActionPerformed(evt);
+            }
+        });
 
-        jLabel5.setText("Semester");
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 0, 51));
+        jLabel5.setText("max...2");
+
+        exit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        exit.setText("Exit");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
+
+        btnBack.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnBack.setText("Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        issueStatusLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        issueStatusLabel.setForeground(new java.awt.Color(255, 255, 255));
+        issueStatusLabel.setText("Status");
+
+        javax.swing.GroupLayout isuueStatusLayout = new javax.swing.GroupLayout(isuueStatus);
+        isuueStatus.setLayout(isuueStatusLayout);
+        isuueStatusLayout.setHorizontalGroup(
+            isuueStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, isuueStatusLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnEnter)
+                .addGap(145, 145, 145))
+            .addGroup(isuueStatusLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addGroup(isuueStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addGroup(isuueStatusLayout.createSequentialGroup()
+                        .addComponent(btnBack)
+                        .addGap(18, 18, 18))
+                    .addComponent(jLabel4))
+                .addGap(6, 6, 6)
+                .addGroup(isuueStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(issueStatusLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(inputId)
+                    .addComponent(selectBook, 0, 170, Short.MAX_VALUE)
+                    .addComponent(inputAmount)
+                    .addComponent(inputStudentName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(isuueStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(exit)
+                    .addComponent(jLabel5))
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+        isuueStatusLayout.setVerticalGroup(
+            isuueStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(isuueStatusLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(isuueStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(selectBook, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(isuueStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(inputAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(isuueStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputStudentName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(isuueStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(btnEnter)
+                .addGap(18, 18, 18)
+                .addComponent(issueStatusLabel)
+                .addGap(30, 30, 30)
+                .addGroup(isuueStatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(exit)
+                    .addComponent(btnBack))
+                .addGap(20, 20, 20))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnBack)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(exit))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(55, 55, 55)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(issueBookComboBox, 0, 170, Short.MAX_VALUE)
-                            .addComponent(amountTextField)
-                            .addComponent(nameTextField)
-                            .addComponent(idTextField)
-                            .addComponent(semesterTextField))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 183, Short.MAX_VALUE)
-                .addComponent(btnEnter)
-                .addGap(151, 151, 151))
+            .addComponent(isuueStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(issueBookComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(amountTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
-                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(idTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(semesterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(btnEnter)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBack)
-                    .addComponent(exit))
-                .addContainerGap())
+            .addComponent(isuueStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-
         System.exit(0);
     }//GEN-LAST:event_exitActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-
         MainWindow mWin = new MainWindow();
         this.setVisible(false);
         mWin.setVisible(true);
-
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void issueBookComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_issueBookComboBoxActionPerformed
+    private void selectBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectBookActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_issueBookComboBoxActionPerformed
+    }//GEN-LAST:event_selectBookActionPerformed
 
     private void btnEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterActionPerformed
-        // TODO add your handling code here:
+        boolean isValid = true;
+
+        String amount = inputAmount.getText();
+        int amountNum = Integer.parseInt(amount);
+        String id = inputId.getText();
+        String name = inputStudentName.getText();
+        String book = selectBook.getSelectedItem().toString();
+
+        if (name.equals("") || id.equals("") || amount.equals("")) {
+            isValid = false;
+        }
+
+        // TODO: Check if amount between 1 - 2
+        if (amountNum <= 0 || amountNum > 2) {
+            isValid = false;
+        }
+
+        if (book.equals("-- Select Book --")) {
+            isValid = false;
+        }
+
+        if (!isValid) {
+            issueStatusLabel.setText("Invalid input.");
+            issueStatusLabel.setForeground(Color.red);
+        } else {
+            StateManager.addIssueBook(id, book, amount);
+            BookManager.reduceStock(book, amountNum);
+
+            issueStatusLabel.setText("Book issued successfully .");
+            issueStatusLabel.setForeground(Color.white);
+        }
     }//GEN-LAST:event_btnEnterActionPerformed
+
+    private void inputStudentNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputStudentNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputStudentNameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,18 +283,19 @@ public class IssueBook extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField amountTextField;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnEnter;
     private javax.swing.JButton exit;
-    private javax.swing.JTextField idTextField;
-    private javax.swing.JComboBox<String> issueBookComboBox;
+    private javax.swing.JTextField inputAmount;
+    private javax.swing.JTextField inputId;
+    private javax.swing.JTextField inputStudentName;
+    private javax.swing.JLabel issueStatusLabel;
+    private javax.swing.JPanel isuueStatus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField nameTextField;
-    private javax.swing.JTextField semesterTextField;
+    private javax.swing.JComboBox<String> selectBook;
     // End of variables declaration//GEN-END:variables
 }

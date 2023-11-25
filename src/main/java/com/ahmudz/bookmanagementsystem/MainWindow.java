@@ -7,7 +7,7 @@ public class MainWindow extends javax.swing.JFrame {
             btnAddBook.setVisible(false);
             btnUpdateBook.setVisible(false);
         } else {
-            btnIssueBook.setVisible(false);
+//            btnIssueBook.setVisible(false);
         }
     }
 
@@ -18,6 +18,8 @@ public class MainWindow extends javax.swing.JFrame {
         initComponents();
 
         hideButtons();
+
+        this.setSize(400, 320);
     }
 
     /**
@@ -38,105 +40,108 @@ public class MainWindow extends javax.swing.JFrame {
         btnUpdateBook = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(new java.awt.Dimension(400, 320));
+        getContentPane().setLayout(null);
 
+        btnShowBooks.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnShowBooks.setText("Show Books");
         btnShowBooks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnShowBooksActionPerformed(evt);
             }
         });
+        getContentPane().add(btnShowBooks);
+        btnShowBooks.setBounds(70, 90, 120, 23);
 
-        btnAddBook.setText("Add Book");
+        btnAddBook.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnAddBook.setText("Add Books");
         btnAddBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddBookActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAddBook);
+        btnAddBook.setBounds(200, 90, 120, 23);
 
-        btnIssueBook.setText("Issue Book");
+        btnIssueBook.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnIssueBook.setText("Issue Books");
         btnIssueBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIssueBookActionPerformed(evt);
             }
         });
+        getContentPane().add(btnIssueBook);
+        btnIssueBook.setBounds(70, 170, 120, 23);
 
-        jLabel2.setText("Welcome To Gub Online Library");
+        jLabel2.setFont(new java.awt.Font("Siyam Rupali", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("লাইব্রেরি ম্যানেজমেন্ট সিস্টেম");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(80, 30, 250, 24);
 
+        logoutBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         logoutBtn.setText("Logout");
         logoutBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutBtnActionPerformed(evt);
             }
         });
+        getContentPane().add(logoutBtn);
+        logoutBtn.setBounds(20, 250, 80, 23);
 
-        btnUpdateBook.setText("Update ");
+        btnUpdateBook.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnUpdateBook.setText("Update Books");
         btnUpdateBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateBookActionPerformed(evt);
             }
         });
+        getContentPane().add(btnUpdateBook);
+        btnUpdateBook.setBounds(200, 130, 120, 23);
 
+        btnExit.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnExit.setText("Exit");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
             }
         });
+        getContentPane().add(btnExit);
+        btnExit.setBounds(310, 250, 60, 23);
 
-        jButton1.setText("Search Book");
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setText("Search Books");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(70, 130, 120, 23);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(logoutBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnExit)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnShowBooks)
-                            .addComponent(jButton1))
-                        .addGap(7, 7, 7)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnUpdateBook, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnAddBook, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnIssueBook)))
-                .addGap(56, 56, 56))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel2)
-                .addGap(79, 79, 79)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnIssueBook)
-                    .addComponent(btnAddBook)
-                    .addComponent(btnShowBooks))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUpdateBook)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(logoutBtn)
-                    .addComponent(btnExit))
-                .addContainerGap())
-        );
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton2.setText("Issued Books");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(200, 170, 120, 23);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Mahmud\\Documents\\NetBeansProjects\\BookManagementSystem\\res\\BG.jpg")); // NOI18N
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, 0, 400, 300);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnShowBooksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowBooksActionPerformed
@@ -176,9 +181,9 @@ public class MainWindow extends javax.swing.JFrame {
         UpdateBookWindow updateWin = new UpdateBookWindow();
 
         StateManager.previousWindow = this;
-        
+
         this.setVisible(false);
-        
+
         updateWin.setVisible(true);
     }//GEN-LAST:event_btnUpdateBookActionPerformed
 
@@ -188,6 +193,21 @@ public class MainWindow extends javax.swing.JFrame {
         this.setVisible(false);
         logWin.setVisible(true);
     }//GEN-LAST:event_logoutBtnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        SearchBook obj = new SearchBook();
+        this.setVisible(false);
+        obj.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        StateManager.previousWindow = this;
+
+        this.setVisible(false);
+
+        IsuuedBookListWindow iblw = new IsuuedBookListWindow();
+        iblw.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,8 +251,10 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnShowBooks;
     private javax.swing.JButton btnUpdateBook;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JButton logoutBtn;
     // End of variables declaration//GEN-END:variables
 }
